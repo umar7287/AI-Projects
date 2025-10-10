@@ -1,0 +1,19 @@
+# AI Weather Predictor | Type: Classification
+from sklearn.tree import DecisionTreeClassifier
+
+# Training data
+temperature = [[5], [10], [15], [20], [25], [30]]  # input data (features)
+weather = ['Cold', 'Cold', 'Warm', 'Warm', 'Hot', 'Hot']  # output labels
+
+# Create the model
+model = DecisionTreeClassifier()
+
+# Train the model with data
+model.fit(temperature, weather)
+
+# Test with a new temperature
+new_temp = [[18]]
+prediction = model.predict(new_temp)
+
+print("Temperature:", new_temp[0][0], "°C")
+print("Predicted Weather:", prediction[0])
